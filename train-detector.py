@@ -50,23 +50,23 @@ def process_data_item(data_item,dim,model_stride):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m' 		,'--model'			,type=str   , required=True		,help='Path to previous model')
-    parser.add_argument('-n' 		,'--name'			,type=str   , required=True		,help='Model name')
-    parser.add_argument('-tr'		,'--train-dir'		,type=str   , required=True		,help='Input data directory for training')
-    parser.add_argument('-its'		,'--iterations'		,type=int   , default=300000	,help='Number of mini-batch iterations (default = 300.000)')
-    parser.add_argument('-bs'		,'--batch-size'		,type=int   , default=32		,help='Mini-batch size (default = 32)')
-    parser.add_argument('-od'		,'--output-dir'		,type=str   , default='./'		,help='Output directory (default = ./)')
-    parser.add_argument('-op'		,'--optimizer'		,type=str   , default='Adam'	,help='Optmizer (default = Adam)')
-    parser.add_argument('-lr'		,'--learning-rate'	,type=float , default=.01		,help='Optmizer (default = 0.01)')
+    parser.add_argument('-m', '--model', type=str, required=True, help='Path to previous model')
+    parser.add_argument('-n', '--name', type=str, required=True, help='Model name')
+    parser.add_argument('-tr', '--train-dir', type=str, required=True, help='Input data directory for training')
+    parser.add_argument('-its', '--iterations', type=int, default=300000, help='Number of mini-batch iterations (default = 300.000)')
+    parser.add_argument('-bs', '--batch-size', type=int, default=32, help='Mini-batch size (default = 32)')
+    parser.add_argument('-od', '--output-dir', type=str, default='./', help='Output directory (default = ./)')
+    parser.add_argument('-op', '--optimizer', type=str, default='Adam'	,help='Optmizer (default = Adam)')
+    parser.add_argument('-lr', '--learning-rate', type=float, default=.01, help='Optmizer (default = 0.01)')
     args = parser.parse_args()
 
-    netname 	= basename(args.name)
-    train_dir 	= args.train_dir
-    outdir 		= args.output_dir
+    netname = basename(args.name)
+    train_dir = args.train_dir
+    outdir = args.output_dir
 
-    iterations 	= args.iterations
-    batch_size 	= args.batch_size
-    dim 		= 208
+    iterations = args.iterations
+    batch_size = args.batch_size
+    dim = 208
 
     if not isdir(outdir):
         makedirs(outdir)
