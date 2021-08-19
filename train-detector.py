@@ -3,7 +3,7 @@ import sys
 import numpy as np
 import cv2
 import argparse
-import keras
+from tensorflow import keras
 
 from random import choice
 from os.path import isfile, isdir, basename, splitext

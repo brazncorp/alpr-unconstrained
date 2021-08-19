@@ -27,7 +27,7 @@ def save_model(model,path,verbose=0):
 	if verbose: print('Saved to %s' % path)
 
 def load_model(path,custom_objects={},verbose=0):
-	from keras.models import model_from_json
+	from tensorflow.keras.models import model_from_json
 
 	path = splitext(path)[0]
 	with open('%s.json' % path,'r') as json_file:
